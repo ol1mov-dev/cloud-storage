@@ -1,0 +1,32 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: CloudStorage
+  datasource:
+    url: jdbc:postgresql://localhost:5432/myapp
+    username: postgres
+    password: postgres123
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+logging:
+  level:
+    org:
+      springframework: DEBUG
+      org.hibernate.SQL: DEBUG
+      org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+jwt:
+  access-token:
+    secret-key: ce5b642d018d4ee90e8ee7c2b86fce1d90ecc9fb2a19502bf24a4164ee5fadca
+    expiration-time-in-minutes: 5
+  refresh-token:
+    secret-key: 395ed7d9319f3a1e4da44130671862ee9907c1cd5e71fad22277da9fee32f8d9
+    expiration-time-in-days: 30
